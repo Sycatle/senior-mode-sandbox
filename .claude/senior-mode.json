@@ -1,0 +1,104 @@
+{
+  "ci": {
+    "mode": "local"
+  },
+  "project": {
+    "owner": "Sycatle",
+    "number": 5,
+    "id": "PVT_kwHOAZfEPs4Bsp37",
+    "fields": {
+      "Status": {
+        "id": "PVTSSF_lAHOAZfEPs4Bsp37zhq2_ug",
+        "options": {
+          "Backlog": "f75ad846",
+          "Ready": "760eea46",
+          "In progress": "47fc9ee4",
+          "In review": "8a29bc32",
+          "Done": "98236657"
+        }
+      },
+      "Priority": {
+        "id": "PVTSSF_lAHOAZfEPs4Bsp37zhq2_4Q",
+        "options": {
+          "P0 now": "674c37f9",
+          "P1 next": "19ff5a53",
+          "P2 later": "ac4f5c5b",
+          "P3 someday": "cb582e5a"
+        }
+      },
+      "Size": {
+        "id": "PVTSSF_lAHOAZfEPs4Bsp37zhq2_40",
+        "options": {
+          "S": "f23a5b2e",
+          "M": "d3769e5d",
+          "L": "567b0be0"
+        }
+      }
+    }
+  },
+  "github": {
+    "protection": "none"
+  },
+  "preset": "node",
+  "commands": {
+    "lint": "npm run lint",
+    "typecheck": "npm run typecheck",
+    "test": "npm run test",
+    "build": "npm run build"
+  },
+  "framework": "next",
+  "checks": [
+    {
+      "name": "lint",
+      "run": "npm run lint"
+    },
+    {
+      "name": "typecheck",
+      "run": "npm run typecheck"
+    },
+    {
+      "name": "test",
+      "run": "npm run test"
+    },
+    {
+      "name": "build",
+      "run": "npm run build"
+    },
+    {
+      "name": "commit subjects",
+      "run": ".githooks/commit-msg --branch"
+    }
+  ],
+  "protected": [
+    "**/migrations/**",
+    "**/auth/**",
+    "auth.*",
+    "**/security/**",
+    "SECURITY.md",
+    "**/permissions/**",
+    "**/rbac/**",
+    ".env*",
+    "**/secrets/**",
+    "*.pem",
+    "*.key",
+    "**/payments/**",
+    "**/billing/**",
+    "**/stripe/**",
+    ".github/workflows/**",
+    ".github/actions/**",
+    ".github/CODEOWNERS",
+    ".githooks/**",
+    ".gitlab-ci.yml",
+    "Dockerfile*",
+    "docker-compose*",
+    "compose.y*ml",
+    "**/infra/**",
+    "**/terraform/**",
+    "**/k8s/**",
+    "*.tf",
+    ".claude/settings*.json",
+    ".claude/senior-mode.json",
+    "middleware.*",
+    "src/middleware.*"
+  ]
+}

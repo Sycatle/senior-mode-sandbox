@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(senior-mode:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git show:*)",
+      "Bash(gh issue view:*)",
+      "Bash(gh issue list:*)",
+      "Bash(gh pr view:*)",
+      "Bash(gh pr list:*)",
+      "Bash(gh pr checks:*)"
+    ],
+    "deny": [
+      "Bash(git push --force:*)",
+      "Bash(git push -f:*)",
+      "Bash(git commit --no-verify:*)",
+      "Bash(git commit -n:*)",
+      "Bash(git push --no-verify:*)",
+      "Bash(gh pr merge --admin:*)"
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "b=$(jq -r '[.plugins | to_entries[] | select(.key | startswith(\"senior-mode@\")) | .value[].installPath] | last // empty' \"$HOME/.claude/plugins/installed_plugins.json\" 2>/dev/null)/bin/senior-mode; [ -x \"$b\" ] || b=$(ls -d \"$HOME\"/.claude/plugins/cache/*/senior-mode/*/bin/senior-mode 2>/dev/null | sort -V | tail -1); [ -x \"$b\" ] && exec \"$b\" statusline; exit 0"
+  }
+}

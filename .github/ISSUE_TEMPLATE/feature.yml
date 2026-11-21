@@ -1,0 +1,23 @@
+name: Feature
+description: Something users should be able to do
+labels: ["type:feature"]
+body:
+  - type: textarea
+    id: gives
+    attributes:
+      label: What this gives
+      description: Who gets what, in plain words.
+    validations:
+      required: true
+  - type: textarea
+    id: criteria
+    attributes:
+      label: Acceptance criteria
+      description: "One per line: Given ..., when ..., then ..."
+    validations:
+      required: true
+  - type: textarea
+    id: detail
+    attributes:
+      label: Technical detail
+      description: Optional. Constraints, links, ideas.
