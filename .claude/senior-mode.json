@@ -33,6 +33,18 @@
           "M": "d3769e5d",
           "L": "567b0be0"
         }
+      },
+      "Severity": {
+        "id": "PVTSSF_lAHOAZfEPs4Bsp37zhq-kjs",
+        "options": {
+          "critical": "7a177c72",
+          "high": "f2c9157e",
+          "moderate": "b8290ec8",
+          "low": "3e2f9317"
+        }
+      },
+      "Paths": {
+        "id": "PVTF_lAHOAZfEPs4Bsp37zhrCt0c"
       }
     }
   },
