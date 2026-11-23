@@ -30,3 +30,8 @@ export function mode(values: number[]): number | undefined {
   }
   return best;
 }
+
+export function range(values: number[]): number {
+  if (values.length === 0) return 0;
+  return Math.max(...values) - Math.min(...values);
+}

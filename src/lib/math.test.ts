@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { average, median, mode, variance } from "./math";
+import { average, median, mode, range, variance } from "./math";
 
 describe("average", () => {
   it("returns the mean of the values", () => {
@@ -38,5 +38,14 @@ describe("mode", () => {
   });
   it("returns undefined for an empty array", () => {
     expect(mode([])).toBeUndefined();
+  });
+});
+
+describe("range", () => {
+  it("returns the difference between the largest and smallest values", () => {
+    expect(range([3, 1, 4])).toBe(3);
+  });
+  it("returns 0 for an empty array", () => {
+    expect(range([])).toBe(0);
   });
 });
