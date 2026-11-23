@@ -49,7 +49,7 @@
     }
   },
   "github": {
-    "protection": "none"
+    "protection": "ruleset"
   },
   "preset": "node",
   "commands": {
