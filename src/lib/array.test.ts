@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { unique } from "./unique";
+import { unique } from "./array";
 
 describe("unique", () => {
   it("removes duplicates, keeping first-occurrence order", () => {
