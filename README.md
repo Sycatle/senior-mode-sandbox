@@ -1,3 +1,5 @@
+This repository is a throwaway sandbox for senior-mode dogfooding; nothing here is meant for production use.
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
