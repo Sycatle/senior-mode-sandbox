@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { capitalize, truncate } from "./text";
+import { capitalize, countWords, truncate } from "./text";
 
 describe("capitalize", () => {
   it("uppercases the first letter of a sentence", () => {
@@ -19,5 +19,16 @@ describe("truncate", () => {
   it("returns a string no longer than max unchanged", () => {
     expect(truncate("hello", 5)).toBe("hello");
     expect(truncate("hi", 5)).toBe("hi");
+  });
+});
+
+describe("countWords", () => {
+  it("counts words separated by one or more spaces", () => {
+    expect(countWords("a  b c")).toBe(3);
+  });
+
+  it("returns 0 for an empty or blank string", () => {
+    expect(countWords("")).toBe(0);
+    expect(countWords("   ")).toBe(0);
   });
 });

@@ -5,3 +5,8 @@ export function capitalize(s: string): string {
 export function truncate(s: string, max: number): string {
   return s.length <= max ? s : s.slice(0, max) + "…";
 }
+
+export function countWords(s: string): number {
+  const t = s.trim();
+  return t === "" ? 0 : t.split(/\s+/).length;
+}
