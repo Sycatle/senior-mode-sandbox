@@ -9,3 +9,18 @@ export function median(values: number[]): number {
   const mid = Math.floor(sorted.length / 2);
   return sorted.length % 2 === 0 ? (sorted[mid - 1] + sorted[mid]) / 2 : sorted[mid];
 }
+
+export function mode(values: number[]): number | undefined {
+  const counts = new Map<number, number>();
+  let best: number | undefined;
+  let bestCount = 0;
+  for (const v of values) {
+    const count = (counts.get(v) ?? 0) + 1;
+    counts.set(v, count);
+    if (count > bestCount) {
+      best = v;
+      bestCount = count;
+    }
+  }
+  return best;
+}
