@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { average, median } from "./math";
+import { average, median, variance } from "./math";
 
 describe("average", () => {
   it("returns the mean of the values", () => {
@@ -20,5 +20,14 @@ describe("median", () => {
   });
   it("returns 0 for an empty array", () => {
     expect(median([])).toBe(0);
+  });
+});
+
+describe("variance", () => {
+  it("returns the population variance of the values", () => {
+    expect(variance([1, 2, 3, 4])).toBe(1.25);
+  });
+  it("returns 0 for an empty array", () => {
+    expect(variance([])).toBe(0);
   });
 });
