@@ -15,3 +15,8 @@ export function variance(values: number[]): number {
   const mean = average(values);
   return average(values.map((v) => (v - mean) ** 2));
 }
+
+export function range(values: number[]): number {
+  if (values.length === 0) return 0;
+  return Math.max(...values) - Math.min(...values);
+}
