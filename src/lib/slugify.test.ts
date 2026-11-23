@@ -34,4 +34,47 @@ describe("slugify", () => {
   it("returns an empty string when only separators remain", () => {
     expect(slugify(" - !? - ")).toBe("");
   });
+
+  it("uses the compatibility form of ligatures", () => {
+    expect(slugify("ﬁle")).toBe("file");
+  });
+
+  it("uses the compatibility form of full-width letters", () => {
+    expect(slugify("Ｈｅｌｌｏ")).toBe("hello");
+  });
+
+  it("maps ß to ss", () => {
+    expect(slugify("Straße")).toBe("strasse");
+    expect(slugify("ß")).toBe("ss");
+    expect(slugify("ẞ")).toBe("ss");
+  });
+
+  it("maps æ to ae in any case", () => {
+    expect(slugify("Ærø")).toBe("aero");
+    expect(slugify("æ")).toBe("ae");
+    expect(slugify("Æ")).toBe("ae");
+  });
+
+  it("maps œ to oe in any case", () => {
+    expect(slugify("Œuvre")).toBe("oeuvre");
+    expect(slugify("œ")).toBe("oe");
+    expect(slugify("Œ")).toBe("oe");
+  });
+
+  it("maps ø to o in any case", () => {
+    expect(slugify("ø")).toBe("o");
+    expect(slugify("Ø")).toBe("o");
+  });
+
+  it("maps ł to l in any case", () => {
+    expect(slugify("Łódź")).toBe("lodz");
+    expect(slugify("ł")).toBe("l");
+    expect(slugify("Ł")).toBe("l");
+  });
+
+  it("maps đ to d in any case", () => {
+    expect(slugify("Đà Nẵng")).toBe("da-nang");
+    expect(slugify("đ")).toBe("d");
+    expect(slugify("Đ")).toBe("d");
+  });
 });
