@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { average, median, variance } from "./math";
+import { average, median, mode, variance } from "./math";
 
 describe("average", () => {
   it("returns the mean of the values", () => {
@@ -29,5 +29,14 @@ describe("variance", () => {
   });
   it("returns 0 for an empty array", () => {
     expect(variance([])).toBe(0);
+  });
+});
+
+describe("mode", () => {
+  it("returns the most frequent value", () => {
+    expect(mode([1, 2, 2, 3])).toBe(2);
+  });
+  it("returns undefined for an empty array", () => {
+    expect(mode([])).toBeUndefined();
   });
 });
