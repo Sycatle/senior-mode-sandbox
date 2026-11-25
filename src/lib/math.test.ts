@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { average, median, mode, range, variance } from "./math";
+import { average, clamp, median, mode, range, variance } from "./math";
 
 describe("average", () => {
   it("returns the mean of the values", () => {
@@ -47,5 +47,18 @@ describe("range", () => {
   });
   it("returns 0 for an empty array", () => {
     expect(range([])).toBe(0);
+  });
+});
+
+describe("clamp", () => {
+  it("returns the value when within bounds", () => {
+    expect(clamp(5, 0, 10)).toBe(5);
+  });
+  it("bounds the value to min and max", () => {
+    expect(clamp(-3, 0, 10)).toBe(0);
+    expect(clamp(42, 0, 10)).toBe(10);
+  });
+  it("throws a RangeError when min > max", () => {
+    expect(() => clamp(1, 10, 0)).toThrow(RangeError);
   });
 });

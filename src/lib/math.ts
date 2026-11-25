@@ -35,3 +35,8 @@ export function range(values: number[]): number {
   if (values.length === 0) return 0;
   return Math.max(...values) - Math.min(...values);
 }
+
+export function clamp(n: number, min: number, max: number): number {
+  if (min > max) throw new RangeError(`clamp: min (${min}) is greater than max (${max})`);
+  return Math.min(Math.max(n, min), max);
+}
